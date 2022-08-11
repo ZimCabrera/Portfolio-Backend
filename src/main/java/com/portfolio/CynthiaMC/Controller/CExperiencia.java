@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("explab")
+@RequestMapping("/explab")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CExperiencia {
     @Autowired
@@ -35,7 +35,7 @@ public class CExperiencia {
     }
     
     @GetMapping("/detail/{idExp}")
-    public ResponseEntity<Experiencia> getById(@PathVariable("idExp") Long idExp){
+    public ResponseEntity<Experiencia> getById(@PathVariable("idExp") int idExp){
         if(!sExperiencia.existsById(idExp))
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         Experiencia experiencia = sExperiencia.getOne(idExp).get();
@@ -56,7 +56,7 @@ public class CExperiencia {
     }
     
     @PutMapping("/update/{idExp}")
-    public ResponseEntity<?> update(@PathVariable("idExp") Long idExp, @RequestBody dtoExperiencia dtoexpe){
+    public ResponseEntity<?> update(@PathVariable("idExp") int idExp, @RequestBody dtoExperiencia dtoexpe){
         if(!sExperiencia.existsById(idExp))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
         if(sExperiencia.existsByNombreE(dtoexpe.getNombreE()) && sExperiencia.getByNombreE(dtoexpe.getNombreE()).get().getIdExp() != idExp)
@@ -73,7 +73,7 @@ public class CExperiencia {
     }
     
     @DeleteMapping("/delete/{idExp}")
-    public ResponseEntity<?> delete(@PathVariable("idExp") Long idExp){
+    public ResponseEntity<?> delete(@PathVariable("idExp") int idExp){
         if(!sExperiencia.existsById(idExp))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
         sExperiencia.delete(idExp);

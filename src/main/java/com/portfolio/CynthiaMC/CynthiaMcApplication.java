@@ -1,5 +1,6 @@
 package com.portfolio.CynthiaMC;
 
+
 import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +10,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 
+
 @SpringBootApplication
 public class CynthiaMcApplication {
 
@@ -16,8 +18,7 @@ public class CynthiaMcApplication {
 		SpringApplication.run(CynthiaMcApplication.class, args);
 	}
         
-        
-        @Bean
+   @Bean
         public CorsFilter corsFilter() {
             CorsConfiguration corsConfiguration = new CorsConfiguration();
             corsConfiguration.setAllowCredentials(true);
@@ -29,5 +30,4 @@ public class CynthiaMcApplication {
             urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
             return new CorsFilter(urlBasedCorsConfigurationSource);
         }
-
 }

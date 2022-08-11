@@ -10,28 +10,25 @@ import javax.persistence.Id;
 public class Experiencia {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long idExp;
+    private int idExp;
     private String nombreE;
     private String descripcionE;
 
     public Experiencia() {
     }
 
-    public Experiencia(Long idExp, String nombreE, String descripcionE) {
-        this.idExp = idExp;
+    public Experiencia(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
 
-    public Experiencia(String nombreE, String descripcionE) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
 
-    public Long getIdExp() {
+    public int getIdExp() {
         return idExp;
     }
 
-    public void setIdExp(Long idExp) {
+    public void setIdExp(int idExp) {
         this.idExp = idExp;
     }
 

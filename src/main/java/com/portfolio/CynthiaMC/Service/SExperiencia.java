@@ -19,7 +19,7 @@ public class SExperiencia {
         return rExperiencia.findAll();
     }
     
-    public Optional<Experiencia> getOne(Long id){
+    public Optional<Experiencia> getOne(int id){
         return rExperiencia.findById(id);
     }
     
@@ -31,11 +31,11 @@ public class SExperiencia {
         rExperiencia.save(expe);
     }
     
-    public void delete(Long id){
+    public void delete(int id){
         rExperiencia.deleteById(id);
     }
     
-    public boolean existsById(Long id){
+    public boolean existsById(int id){
         return rExperiencia.existsById(id);
     }
     

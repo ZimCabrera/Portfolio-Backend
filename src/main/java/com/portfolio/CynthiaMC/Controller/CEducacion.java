@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("educacion")
+@RequestMapping("/educacion")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CEducacion {
      @Autowired
@@ -37,7 +37,7 @@ public class CEducacion {
     }
     
     @GetMapping("/detail/{idEdu}")
-    public ResponseEntity<Educacion> getById(@PathVariable("idEdu") Long idEdu){
+    public ResponseEntity<Educacion> getById(@PathVariable("idEdu") int idEdu){
         if(!sEducacion.existsById(idEdu))
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
         Educacion educacion = sEducacion.getOne(idEdu).get();
@@ -58,7 +58,7 @@ public class CEducacion {
     }
     
     @PutMapping("/update/{idEdu}")
-    public ResponseEntity<?> update(@PathVariable("idEdu") Long idEdu, @RequestBody dtoEducacion dtoeducacion){
+    public ResponseEntity<?> update(@PathVariable("idEdu") int idEdu, @RequestBody dtoEducacion dtoeducacion){
         if(!sEducacion.existsById(idEdu))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
         if(sEducacion.existsByNombreE(dtoeducacion.getNombreE()) && sEducacion.getByNombreE(dtoeducacion.getNombreE()).get().getIdEdu() != idEdu)
@@ -74,7 +74,7 @@ public class CEducacion {
         return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
     }
     @DeleteMapping("/delete/{idEdu}")
-    public ResponseEntity<?> delete(@PathVariable("idEdu") Long idEdu){
+    public ResponseEntity<?> delete(@PathVariable("idEdu") int idEdu){
         if(!sEducacion.existsById(idEdu))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
         sEducacion.delete(idEdu);

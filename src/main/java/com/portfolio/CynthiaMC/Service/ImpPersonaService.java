@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public abstract class ImpPersonaService implements IPersonaService{
+public class ImpPersonaService implements IPersonaService{
     @Autowired IPersonaRepository ipersonaRepository;
     
     @Override
@@ -22,11 +22,11 @@ public abstract class ImpPersonaService implements IPersonaService{
         ipersonaRepository.save(persona);
     }
 
-    
+    @Override
     public void deletePersona(Long id) {
        ipersonaRepository.deleteById(id);
     }
-
+    
     @Override
     public Persona findPersona(Long id) {
         Persona persona = ipersonaRepository.findById(id).orElse(null);

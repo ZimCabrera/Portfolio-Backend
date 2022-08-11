@@ -19,7 +19,7 @@ public class SSkills {
         return rSkills.findAll();
     }
     
-    public Optional<Skills> getOne(Long id){
+    public Optional<Skills> getOne(int id){
         return rSkills.findById(id);
     }
     
@@ -27,15 +27,15 @@ public class SSkills {
         return rSkills.findByNombreE(nombreE);
     }
     
-    public void save(Skills skill){
-        rSkills.save(skill);
+    public void save(Skills skills){
+        rSkills.save(skills);
     }
     
-    public void delete(Long id){
+    public void delete(int id){
         rSkills.deleteById(id);
     }
     
-    public boolean existsById(Long id){
+    public boolean existsById(int id){
         return rSkills.existsById(id);
     }
     

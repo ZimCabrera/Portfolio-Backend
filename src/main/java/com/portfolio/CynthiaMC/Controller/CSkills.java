@@ -48,7 +48,7 @@ public class CSkills {
         if(sSkills.existsByNombreE(dtoskills.getNombreE()))
             return new ResponseEntity(new Mensaje("Esa nombre ya existe"), HttpStatus.BAD_REQUEST);
         
-        Skills skills = new Skills(dtoskills.getNombreE(), dtoskills.getImgSkill());
+        Skills skills = new Skills(dtoskills.getNombreE(), dtoskills.getImgSkill(), dtoskills.getPorcentaje());
         sSkills.save(skills);
         
         return new ResponseEntity(new Mensaje("Skill agregada"), HttpStatus.OK);

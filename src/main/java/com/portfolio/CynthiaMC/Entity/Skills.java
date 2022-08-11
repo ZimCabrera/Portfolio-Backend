@@ -24,11 +24,6 @@ public class Skills {
         this.porcentaje = porcentaje;
     }
 
-    public Skills(String nombreE, String imgSkill) {
-       this.nombreE = nombreE;
-       this.imgSkill = imgSkill;
-    }
-
     public int getIdSkill() {
         return idSkill;
     }

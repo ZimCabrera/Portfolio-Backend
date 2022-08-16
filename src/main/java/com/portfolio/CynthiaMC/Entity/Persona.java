@@ -34,7 +34,7 @@ public class Persona implements Serializable{
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String img;
     
-    @Size(min = 1, max = 500, message = "no cumple con la longitud")
+    @Size(min = 1, max = 700, message = "no cumple con la longitud")
     private String descripcion;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")

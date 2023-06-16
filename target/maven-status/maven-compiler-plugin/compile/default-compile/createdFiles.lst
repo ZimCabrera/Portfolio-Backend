@@ -10,7 +10,6 @@ com\portfolio\CynthiaMC\Security\Enums\RolNombre.class
 com\portfolio\CynthiaMC\Security\Entity\Rol.class
 com\portfolio\CynthiaMC\Security\Controller\AuthController.class
 com\portfolio\CynthiaMC\Entity\Experiencia.class
-com\portfolio\CynthiaMC\Interface\IPersonaService.class
 com\portfolio\CynthiaMC\Security\Jwt\JwtProvider.class
 com\portfolio\CynthiaMC\Repository\REducacion.class
 com\portfolio\CynthiaMC\Security\Dto\LoginUsuario.class
@@ -35,5 +34,6 @@ com\portfolio\CynthiaMC\Dto\dtoEducacion.class
 com\portfolio\CynthiaMC\Dto\dtoExperiencia.class
 com\portfolio\CynthiaMC\CynthiaMcApplication.class
 com\portfolio\CynthiaMC\Security\Entity\Usuario.class
+com\portfolio\CynthiaMC\Dto\dtoPersona.class
 com\portfolio\CynthiaMC\Entity\Skills.class
 com\portfolio\CynthiaMC\Security\Service\UserDetailsImpl.class
